@@ -1,0 +1,9 @@
+E:\projects\courses\BSA\Academy\dotNETCore\BSA-netCore\BSA-netCore\bin\Debug\netcoreapp1.1\BSA-netCore.deps.json
+E:\projects\courses\BSA\Academy\dotNETCore\BSA-netCore\BSA-netCore\bin\Debug\netcoreapp1.1\BSA-netCore.runtimeconfig.json
+E:\projects\courses\BSA\Academy\dotNETCore\BSA-netCore\BSA-netCore\bin\Debug\netcoreapp1.1\BSA-netCore.runtimeconfig.dev.json
+E:\projects\courses\BSA\Academy\dotNETCore\BSA-netCore\BSA-netCore\bin\Debug\netcoreapp1.1\BSA-netCore.dll
+E:\projects\courses\BSA\Academy\dotNETCore\BSA-netCore\BSA-netCore\bin\Debug\netcoreapp1.1\BSA-netCore.pdb
+E:\projects\courses\BSA\Academy\dotNETCore\BSA-netCore\BSA-netCore\obj\Debug\netcoreapp1.1\BSA-netCore.csprojResolveAssemblyReference.cache
+E:\projects\courses\BSA\Academy\dotNETCore\BSA-netCore\BSA-netCore\obj\Debug\netcoreapp1.1\BSA-netCore.AssemblyInfo.cs
+E:\projects\courses\BSA\Academy\dotNETCore\BSA-netCore\BSA-netCore\obj\Debug\netcoreapp1.1\BSA-netCore.dll
+E:\projects\courses\BSA\Academy\dotNETCore\BSA-netCore\BSA-netCore\obj\Debug\netcoreapp1.1\BSA-netCore.pdb
