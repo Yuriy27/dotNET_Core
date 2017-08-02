@@ -7,7 +7,7 @@ using BSA_netCore.Models.EF;
 
 namespace BSAnetCore.Migrations
 {
-    [DbContext(typeof(PlayersContext))]
+    [DbContext(typeof(GameContext))]
     partial class PlayersContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -30,6 +30,20 @@ namespace BSAnetCore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Players");
+                });
+
+            modelBuilder.Entity("BSA_netCorenetCore.Models.Match", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Guest");
+
+                    b.Property<string>("Owner");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Matches");
                 });
         }
     }

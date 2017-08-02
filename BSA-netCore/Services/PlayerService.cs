@@ -9,9 +9,9 @@ namespace BSA_netCore.Services
 {
     public class PlayerService : IPlayerService
     {
-        private PlayersContext _context;
+        private GameContext _context;
 
-        public PlayerService(PlayersContext context)
+        public PlayerService(GameContext context)
         {
             _context = context;
         }
@@ -19,6 +19,11 @@ namespace BSA_netCore.Services
         public IEnumerable<Player> GetPlayers()
         {
             return _context.Players;
+        }
+
+        public Player GetPlayer(int id)
+        {
+            return _context.Players.Find(id);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BSA_netCore.Logger;
 using BSA_netCore.Models.EF;
 using BSA_netCore.Services;
 using Microsoft.AspNetCore.Builder;
@@ -31,9 +32,10 @@ namespace BSA_netCore
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = @"Server=.\SQLEXPRESS;Database=coreDB;Trusted_Connection=True;";
-            services.AddDbContext<PlayersContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<GameContext>(options => options.UseSqlServer(connection));
 
             services.AddTransient<IPlayerService, PlayerService>();
+            services.AddTransient<MatchesService, MatchesService>();
             
             // Add framework services.
             services.AddMvc();
@@ -41,10 +43,22 @@ namespace BSA_netCore
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env,
-            ILoggerFactory loggerFactory, PlayersContext context)
+            ILoggerFactory loggerFactory, GameContext context)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            //loggerFactory.AddDebug();
+            
+            //Custom logs
+            loggerFactory.AddFileLogger(c =>
+            {
+                c.LogLevel = LogLevel.Information;
+                c.FilePath = "info_logs.log";
+            });
+            loggerFactory.AddFileLogger(c =>
+            {
+                c.LogLevel = LogLevel.Error;
+                c.FilePath = "error_logs.log";
+            });
 
             app.UseMvc();
 

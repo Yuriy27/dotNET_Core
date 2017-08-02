@@ -9,5 +9,7 @@ namespace BSA_netCore.Services
     public interface IPlayerService
     {
         IEnumerable<Player> GetPlayers();
+
+        Player GetPlayer(int id);
     }
 }

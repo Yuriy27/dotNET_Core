@@ -8,8 +8,8 @@ using BSA_netCore.Models.EF;
 namespace BSAnetCore.Migrations
 {
     [DbContext(typeof(GameContext))]
-    [Migration("20170731190801_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20170802154645_AddedMatches")]
+    partial class AddedMatches
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,6 +31,20 @@ namespace BSAnetCore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Players");
+                });
+
+            modelBuilder.Entity("BSA_netCorenetCore.Models.Match", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Guest");
+
+                    b.Property<string>("Owner");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Matches");
                 });
         }
     }
